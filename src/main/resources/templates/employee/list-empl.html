@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Employees</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+  <body>
+	  <div class="container">
+	  <h3>Employees Directory</h3>
+	  <hr>
+	  <a th:href="@{/new}" class="btn btn-primary">Click for go to main menu</a>
+	  	  <a th:href="@{/employees/showAddForm}"
+	  class="btn btn-primary btn-sm mb-3">
+	  Add Employee
+	  </a>
+	  
+	  <table class="table table-bordered table-striped">
+		  <thead class="table-dark">
+			  <tr>
+				  <th>EMPID</th>
+				  <th>Name</th>
+				  <th>FATHER name</th>
+				  <th>Address</th>
+					<th>Mobile</th>
+					<th>DEPTID</th>
+					<th>SLBID</th>
+					<th>GRID</th>
+					<th>BIRTHDATE</th>
+					<th>GENDER</th>
+					<th>JOININGDATE</th>
+				
+			  </tr>
+</thead>	  
+<tbody>
+			  <tr th:each="tmpStud : ${employees}">
+				 <td th:text="${tmpStud.empID}"/>
+				 <td th:text="${tmpStud.Name}"/>
+				 <td th:text="${tmpStud.Fname}"/>
+				 <td th:text="${tmpStud.Address}"/>
+				 <td th:text="${tmpStud.Mobile}"/> 
+				 <td th:text="${tmpStud.deptID}"/> 
+				 <td th:text="${tmpStud.slbID}"/>
+				 <td th:text="${tmpStud.grID}"/>
+				 <td th:text="${tmpStud.birthDate}"/>
+				 <td th:text="${tmpStud.gender}"/>
+				 <td th:text="${tmpStud.joiningDate}"/>				 
+				 
+				  <td>
+<a th:href="@{/employees/showUpdFrm(stID=${tmpStud.empID})}" class="btn btn-info btn-sm">
+			 Update
+</a> 
+
+ <a th:href="@{/employees/delete(stID=${tmpStud.empID})}"
+	 class="btn btn-danger btn-sm"
+	 onclick="if (!(confirm('are you sure you want to delte this Student?')))
+	 return false"
+ >           Delete
+ </a> 				 
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</body>
+</htm>

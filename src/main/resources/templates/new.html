@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+	  <style>
+		  body {
+ 		background-image: url("/images/design.jpeg");
+ 		background-repeat: no-repeat;
+ 		background-size: 100%;
+		}
+		.icon{
+			height: 18px;
+			width: 18px;
+		}
+	  </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+	  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" th:href="@{/mainPage}">Employee Payroll System</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/new}">Main Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/payments/list}">Payement</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/departments/list}">Department</a>
+        </li>
+ 
+ <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/grades/list}">Grade</a>
+        </li>
+        
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/leavess/list}">Leave</a>
+        </li>
+ 
+  <li class="nav-item">
+          <a class="nav-link active" aria-current="page" th:href="@{/employees/list}">Employee</a>
+        </li>
+ 
+ 
+      </ul>
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+		   <li class="nav-but">
+         
+        </li>
+         <li class="nav-but">
+                 </li>
+	  </ul>
+    </div>
+  </div>
+</nav>
+	  <div>
+		  <div class="container-fluid mt-4 mb-5">
+			  <!--<a th:href="@{/mainPage}" type="button" class="btn btn-light"><img th:src="@{/images/icon2.png}" class="icon"></a>-->
+			  <div class="container">
+
+				  <div class="row">
+					  <div class="col-lg-4">
+						  <div class="card" style="width: 18rem;">
+ 							 <img th:src="@{/images/emplo.jpeg}" class="card-img-top" alt="...">
+  								<div class="card-body">
+    						<h5 class="card-title">Employees</h5>
+    				<p class="card-text">Here is list of employees</p>
+    					<a th:href="@{/employees/list}" class="btn btn-primary">Select</a>
+  					</div>
+						</div>
+					  </div>
+					  <div class="col-lg-4">
+						  <div class="card" style="width: 18rem;">
+ 							 <img th:src="@{/images/ddd.jpg}" class="card-img-top" alt="...">
+  								<div class="card-body">
+    						<h5 class="card-title">Departments</h5>
+    				<p class="card-text">Here is a list of departments</p>
+    					<a th:href="@{/departments/list}" class="btn btn-primary">Select</a>
+  					</div>
+						</div>
+					  </div>
+					  <div class="col-lg-4">
+						  <div class="card" style="width: 18rem;">
+ 							 <img th:src="@{/images/grade.jpeg}" class="card-img-top" alt="...">
+  								<div class="card-body">
+    						<h5 class="card-title">Grades</h5>
+    				<p class="card-text">List of Grades</p>
+    					<a th:href="@{/grades/list}" class="btn btn-primary">Select</a>
+  					</div>
+						</div>
+					  </div>
+				  </div>
+				  <div class="container-fluid mt-5 mb-5">
+				  <div class="row">
+					  <div class="col-lg-4">
+						  <div class="card" style="width: 18rem;">
+ 							 <img th:src="@{images/leaves.jpeg}" class="card-img-top" alt="...">
+  								<div class="card-body">
+    						<h5 class="card-title">Leaves</h5>
+    				<p class="card-text">Leaves provided to a employees</p>
+    					<a th:href="@{/leavess/list}" class="btn btn-primary">Select</a>
+  					</div>
+						</div>
+					  </div>
+					  <div class="col-lg-4">
+						  <div class="card" style="width: 18rem;">
+ 							 <img th:src="@{/images/leav.png}" class="card-img-top" alt="...">
+  								<div class="card-body">
+    						<h5 class="card-title">LeavesTransaction</h5>
+    				<p class="card-text">Leaves taken by a employee</p>
+    					<a th:href="@{/levTranss/list}" class="btn btn-primary">Select</a>
+  					</div>
+						</div>
+					  </div>
+					  <div class="col-lg-4">
+						  <div class="card" style="width: 18rem;">
+ 							 <img th:src="@{/images/sala.jpg}" class="card-img-top" alt="...">
+  								<div class="card-body">
+    						<h5 class="card-title">Salary Slab</h5>
+    				<p class="card-text">Salary description</p>
+    					<a th:href="@{/salslabs/list}" class="btn btn-primary">Select</a>
+  					</div>
+						</div>
+					  </div>
+					    <div class="col-lg-4">
+						  <div class="card" style="width: 18rem;">
+ 							 <img th:src="@{/images/payment.jpg}" class="card-img-top" alt="...">
+  								<div class="card-body">
+    						<h5 class="card-title">Payment Slab</h5>
+    				<p class="card-text">payment description</p>
+    					<a th:href="@{/payments/list}" class="btn btn-primary">Select</a>
+  					</div>
+						</div>
+					  </div>
+					  
+				  </div>
+				  </div>
+			  </div>
+		  </div>
+	  </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    
+  </body>
+</html>

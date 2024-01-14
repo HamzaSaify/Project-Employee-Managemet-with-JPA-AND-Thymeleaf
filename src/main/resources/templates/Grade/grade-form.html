@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap demo</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ <link rel="stylesheet" href="/grade.css">
+ 
+  </head>
+  
+  <body>
+	   <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            background-image: url("/images/adddep.jpg");
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #555;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+	  
+	  
+	  <div class="container">
+		  <h3> Grade Add</h3>
+		  <hr>
+		  <p class="h4 mb-4"> </p> 
+		  <form action="#" th:action="@{/grades/save}"
+		  th:object="${grades}" method="POST">
+		  <h6>grId</h6>
+		  
+		  <input type="text" th:field="*{grID}"
+		  class="form-control mb-4 w-25" placeholder="grID">
+		  <h6>grade</h6>
+		  
+		  
+		  <input type="text" th:field="*{grade}"
+		  class="form-control mb-4 w-25" placeholder="grade">
+		  <h6>basesal</h6>
+		  <input type="text" th:field="*{baseSal}"
+		  class="form-control mb-4 w-25" placeholder="baseSal">
+
+		 <button type="submit"> Save </button>
+		 
+		  </form>
+	  </div>
+  </body>
+</html>
